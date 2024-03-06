@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-from joblib import load
+import joblib
 
 st.title(':orange[Bankruptcy Prediction]')
 
@@ -52,7 +52,7 @@ st.write(df)
 
 if st.button('Predict'):
     
-    loaded_model = load("model.sav")
+    loaded_model = joblib.load("model.joblib")
 
     prediction = loaded_model.predict(df)
    
